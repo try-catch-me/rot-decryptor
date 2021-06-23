@@ -1,0 +1,158 @@
+<html>
+  <head>
+    <title>Rot 13 Algorithm</title>
+
+    <!--Bootstrap 4.0-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <!--Google fonts-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <!--Icons-->
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/thinline.css"
+    />
+
+    <style>
+      :root {
+        --hue-color: 250;
+        --first-color: hsl(var(--hue-color), 69%, 61%);
+        --first-color-second: hsl(var(--hue-color), 69%, 61%);
+        --first-color-alt: hsl(var(--hue-color), 57%, 53%);
+        --first-color-lighter: hsl(var(--hue-color), 92%, 85%);
+        --title-color: hsl(var(--hue-color), 8%, 15%);
+        --text-color: hsl(var(--hue-color), 8%, 45%);
+        --text-color-light: hsl(var(--hue-color), 8%, 65%);
+        --input-color: hsl(var(--hue-color), 70%, 96%);
+        --body-color: hsl(var(--hue-color), 60%, 99%);
+        --container-color: #fff;
+
+        --body-font: "Poppins", sans-serif;
+        --big-font-size: 2rem;
+        --h1-font-size: 1.5rem;
+        --h2-font-size: 1.25rem;
+        --h3-font-size: 1.125rem;
+        --normal-font-size: 0.938rem;
+        --small-font-size: 0.813rem;
+        --smaller-font-size: 0.75rem;
+
+        --font-medium: 400;
+        --font-semi-bold: 600;
+      }
+      body {
+        font-family: var(--body-font);
+      }
+      .navbar {
+        background-color: var(--first-color) !important;
+        font-family: var(--body-font);
+      }
+
+      #btn {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <!-- As a heading -->
+      <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+          <span class="navbar-brand mb-0 h1">{Try Catch}</span>
+        </div>
+      </nav>
+    </div>
+    <!--Main-->
+    <div class="jumbotron">
+      <img />
+      <h1 class="display-4 text-center">Hello, world!</h1>
+      <p class="lead text-center">
+        This web application is developed by
+        <span style="color: red">Umer Farid</span>. It's very helpful and very
+        useful when you are trying to capture the falg. <br />Let's try to
+        decypt encrypted data by ROT-13 algorithm.
+      </p>
+
+      <p class="lead text-center">
+        <a class="btn btn-success btn-lg" href="#" role="button">About us</a>
+        <a class="btn btn-danger btn-lg" href="#" role="button"
+          >Rot Algorithm</a
+        >
+        <a class="btn btn-secondary btn-lg" href="#" role="button">Join us</a>
+      </p>
+    </div>
+    <div>
+      <form action="/dec" method="GET">
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">Encrypted Literal</label>
+          <textarea
+            class="form-control"
+            id="exampleFormControlTextarea1"
+            rows="3"
+            name="encoded_text"
+          ></textarea>
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlSelect1">Select ROT 1-25</label>
+          <select
+            class="form-control"
+            name="rot_versions"
+            id="exampleFormControlSelect1"
+          >
+            <option value="1">ROT 1</option>
+            <option value="2">ROT 2</option>
+            <option value="3">ROT 3</option>
+            <option value="4">ROT 4</option>
+            <option value="5">ROT 5</option>
+            <option value="6">ROT 6</option>
+            <option value="7">ROT 7</option>
+            <option value="8">ROT 8</option>
+            <option value="9">ROT 9</option>
+            <option value="10">ROT 10</option>
+            <option value="11">ROT 11</option>
+            <option value="12">ROT 12</option>
+            <option selected value="13">ROT 13</option>
+            <option value="14">ROT 14</option>
+            <option value="15">ROT 15</option>
+            <option value="16">ROT 16</option>
+            <option value="17">ROT 17</option>
+            <option value="18">ROT 18</option>
+            <option value="19">ROT 19</option>
+            <option value="20">ROT 20</option>
+            <option value="21">ROT 21</option>
+            <option value="22">ROT 22</option>
+            <option value="23">ROT 23</option>
+            <option value="24">ROT 24</option>
+            <option value="25">ROT 25</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">Decrypted Text</label>
+          <textarea
+            class="form-control"
+            id="exampleFormControlTextarea1"
+            rows="3"
+            style="color: red"
+            id="neatdata"
+          >
+        {{dec_txt}}  
+        </textarea
+          >
+        </div>
+        <div>
+          <button type="submit" id="btn" class="btn btn-primary mt-1">
+            Decrypt
+          </button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
